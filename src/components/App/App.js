@@ -3,6 +3,7 @@ import SearchBar from '../SearchBar/SearchBar'
 import SearchResults from '../SearchResults/SearchResults'
 import Playlist from '../Playlist/Playlist'
 import Spotify from '../../util/Spotify'
+import Footer from '../Footer/Footer'
 
 import React, { Component } from 'react'
 
@@ -28,14 +29,10 @@ export default class App extends Component {
 	}
 
 	savePlaylist() {
-		console.log('PRESSED')
 		const trackUris = this.state.playlistTracks.map((track) => track.uri)
-		console.log(trackUris)
-		// Spotify.savePlaylist(this.state.playlistName, trackUris).then(console.log('OK'))
-		Spotify.savePlaylist(this.state.playlistName, trackUris)
-		// Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
-		// 	this.setState({ playlistName: 'New PlayList', playlistTracks: [] })
-		// })
+		Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
+			this.setState({ playlistName: 'New PlayList', playlistTracks: [] })
+		})
 	}
 
 	addTrack(track) {
@@ -77,6 +74,7 @@ export default class App extends Component {
 						/>
 					</div>
 				</div>
+				<Footer />
 			</div>
 		)
 	}

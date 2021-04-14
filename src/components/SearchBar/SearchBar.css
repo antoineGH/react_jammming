@@ -1,20 +1,21 @@
 .SearchBar {
 	display: flex;
-	flex-direction: column;
-	align-items: center;
-	padding-top: 6.94rem;
-	margin-bottom: 6.33rem;
+	justify-items: center;
+	justify-content: center;
+	margin: auto;
+	margin-bottom: 2.33rem;
+	padding-top: 3rem;
 }
 
 .SearchBar input {
 	width: 287px;
-	padding: 0.88rem 0;
+	padding: 0.8rem 0;
 	border: 1px solid #fff;
-	border-radius: 3px;
-	margin-bottom: 2.22rem;
+	border-radius: 0.36rem;
 	color: #010c3f;
 	text-align: center;
 	font-size: 1rem;
+	font-family: 'ProximaNova_Regular', 'Arial Narrow', Arial, sans-serif;
 }
 
 .SearchBar input:focus {

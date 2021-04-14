@@ -2,15 +2,164 @@ body,
 html,
 #root {
 	height: 100%;
+	scroll-behavior: smooth;
 }
 
 html {
-	font-size: 18px;
+	font-size: 14px;
+}
+
+/* --- Font Management --- */
+
+@font-face {
+	font-family: 'ProximaNova_Black';
+	src: url('./fonts/ProximaNova-Black.woff') format('woff2'), url('./fonts/ProximaNova-Black.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova_Bold';
+	src: url('./fonts/ProximaNova-Bold.woff') format('woff2'), url('./fonts/ProximaNova-Bold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova_BoldIt';
+	src: url('./fonts/ProximaNova-BoldIt.woff') format('woff2'), url('./fonts/ProximaNova-BoldIt.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova_Extrabold';
+	src: url('./fonts/ProximaNova-Extrabold.woff') format('woff2'), url('./fonts/ProximaNova-Extrabold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova_Light';
+	src: url('./fonts/ProximaNova-Light.woff') format('woff2'), url('./fonts/ProximaNova-Light.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova_LightItalic';
+	src: url('./fonts/ProximaNova-LightItalic.woff') format('woff2'), url('./fonts/ProximaNova-LightItalic.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova_RegItalic';
+	src: url('./fonts/ProximaNova-RegItalic.woff') format('woff2'), url('./fonts/ProximaNova-RegItalic.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova_Regular';
+	src: url('./fonts/ProximaNova-Regular.woff') format('woff2'), url('./fonts/ProximaNova-Regular.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova_Regularitalic';
+	src: url('./fonts/ProximaNova-RegularItalic.woff') format('woff2'), url('./fonts/ProximaNova-RegularItalic.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova_Semibold';
+	src: url('./fonts/ProximaNova-Semibold.woff') format('woff2'), url('./fonts/ProximaNova-Semibold.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'ProximaNova_SemibolItalic';
+	src: url('./fonts/ProximaNova-SemiboldItalic.woff') format('woff2'), url('./fonts/ProximaNova-SemiboldItalic.woff') format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+p {
+	font-family: 'ProximaNova_Regular';
+}
+
+button:focus {
+	outline: none;
+}
+
+.button_container {
+	min-width: 100px;
+	max-width: 200px;
+	width: 50%;
+	margin: 2rem 0rem;
+}
+
+.container_btn {
+	max-width: 200px;
+	width: 50%;
+	margin: 0rem 1rem;
+}
+
+.button-design {
+	font-family: 'ProximaNova_Regular', 'Arial Narrow', Arial, sans-serif;
+	font-size: 1rem;
+	border-radius: 0.36rem;
+	text-transform: capitalize;
+	background-color: var(--background-color);
+	color: #221e1e;
+	padding: 0.2rem 0.7rem 0.2rem 0.7rem;
+	height: 2.8rem;
+	box-shadow: 0 0 50px 0 rgb(0 0 0 / 10%);
+	border: none;
+	white-space: nowrap;
+	width: 100%;
+	position: relative;
+	cursor: pointer;
+	user-select: none;
+
+	--background-color: white;
+	--accent-color: #1db954;
+}
+
+.button-design::before {
+	content: '';
+	position: absolute;
+	border-radius: 0.36rem;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: -1;
+	background-color: var(--accent-color);
+	transition: transform 300ms ease-in-out;
+	transform: scaleX(0);
+	transform-origin: left;
+}
+
+.button-design:hover::before,
+.button-design:focus::before {
+	transform: scaleX(1);
+}
+.button-design {
+	z-index: 1;
+}
+.button-design:focus {
+	text-decoration: none;
+	outline: none;
 }
 
 h1 {
 	padding: 0.77rem 0;
-	background-color: #010c3f;
+	background-color: #000000;
 	text-align: center;
 	font-family: 'Poppins', sans-serif;
 	font-size: 1.88rem;
@@ -18,30 +167,37 @@ h1 {
 }
 
 h1 .highlight {
-	color: #6c41ec;
+	color: #1db954;
 }
 
 h2 {
-	font-family: 'Poppins', sans-serif;
+	font-family: 'ProximaNova_Regular', 'Poppins', sans-serif;
 	font-size: 1.55rem;
+	font-weight: normal;
 }
 
 .App {
 	height: 100%;
-	padding: 0 17% 10% 17%;
-	background-image: url('./background_photo_desktop.jpg');
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
 	font-family: 'Work Sans', sans-serif;
 	font-weight: 500;
 	color: #fff;
+	min-height: 1200px;
+	background-image: radial-gradient(circle, #121212, #15171a, #141c20, #132222, #162721);
 }
 
 .App-playlist {
 	display: flex;
-	justify-content: space-between;
-	width: 100%;
+	justify-content: center;
+	margin: auto;
+	width: 60%;
+}
+
+.Footer {
+	background-color: black;
+	height: 50px;
 }
 
 @media only screen and (max-width: 1020px) {
@@ -49,4 +205,8 @@ h2 {
 		align-items: center;
 		flex-direction: column;
 	}
+}
+
+#root div h1 {
+	margin: 0;
 }

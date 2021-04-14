@@ -21,9 +21,11 @@ export default class SearchBar extends Component {
 		return (
 			<div className='SearchBar'>
 				<input onChange={this.handleTermChange} placeholder='Enter A Song, Album, or Artist' />
-				<button onClick={this.search} className='SearchButton'>
-					SEARCH
-				</button>
+				<div className='container_btn'>
+					<button className='button-design' onClick={this.search}>
+						{'SEARCH'.toLowerCase()}
+					</button>
+				</div>
 			</div>
 		)
 	}
