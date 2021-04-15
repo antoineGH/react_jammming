@@ -18,19 +18,17 @@
 }
 
 .navigation-footer p {
-	font-size: 1rem;
+	font-family: 'ProximaNova_Regular';
+	font-size: 1.1rem;
 	display: inline;
-	margin: auto 1rem;
+	margin: auto 1.3rem;
 	cursor: pointer;
+	text-transform: uppercase;
+	transition: 0.5s;
 }
 
 .navigation-footer p:hover {
-	color: #1db954;
-}
-
-.signature-footer p {
-	font-size: 1rem;
-	color: #a6a5a5;
+	color: #8b9697;
 }
 
 .social-footer {
@@ -61,5 +59,9 @@
 }
 
 .signature-footer p {
-	margin-top: 1rem;
+	margin: 1.5rem 0rem 0rem 0rem;
+	font-family: 'ProximaNova_Regular';
+	font-size: 1rem;
+	color: #a6a5a5;
+	padding: 0rem 1rem;
 }

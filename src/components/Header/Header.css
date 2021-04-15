@@ -1,0 +1,43 @@
+.Header img {
+	max-width: 35px;
+}
+
+.Header {
+	width: 100%;
+	top: 0;
+	z-index: 10;
+}
+
+.Header p {
+	text-transform: uppercase;
+	font-family: 'ProximaNova_Semibold';
+	font-weight: bold;
+	font-size: 1.6rem;
+	text-transform: uppercase;
+}
+
+.Header a {
+	color: white;
+	text-decoration: none;
+	font-family: 'ProximaNova_Semibold';
+	font-weight: bold;
+	font-size: 1.3rem;
+	text-transform: uppercase;
+	justify-self: center;
+	transition: 0.5s;
+}
+
+.Header a:hover {
+	color: #1db954;
+}
+
+.gridHeader {
+	display: grid;
+	width: 95%;
+	height: 72px;
+	grid-template-columns: minmax(50px, 50px) 4fr repeat(4, 1fr);
+
+	margin-left: 1rem;
+	align-items: center;
+	justify-items: space-around;
+}

@@ -1,0 +1,18 @@
+.Jumbotron {
+	min-height: 200px;
+	margin-bottom: 1rem;
+	display: flex;
+	width: 100%;
+}
+
+.Jumbotron h3 {
+	align-self: center;
+	justify-self: center;
+	margin: auto;
+	font-family: 'ProximaNova_Extrabold';
+	font-size: 3.5rem;
+	text-transform: uppercase;
+	padding: 0rem 1rem;
+	max-width: 800px;
+	text-align: center;
+}

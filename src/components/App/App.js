@@ -1,5 +1,6 @@
 import './App.css'
 import Header from '../Header/Header'
+import Jumbotron from '../Jumbotron/Jumbotron'
 import SearchBar from '../SearchBar/SearchBar'
 import SearchResults from '../SearchResults/SearchResults'
 import Playlist from '../Playlist/Playlist'
@@ -61,6 +62,7 @@ export default class App extends Component {
 			<div>
 				<div className='App'>
 					<Header />
+					<Jumbotron />
 					<SearchBar onSearch={this.search} />
 					{/* <div className='App-playlist'>
 						<SearchResults SearchResults={this.state.searchResults} onAdd={this.addTrack} onRemove={this.removeTrack} />
@@ -73,7 +75,7 @@ export default class App extends Component {
 						/>
 					</div> */}
 				</div>
-				{/* <Footer /> */}
+				<Footer />
 			</div>
 		)
 	}
