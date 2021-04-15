@@ -157,19 +157,6 @@ button:focus {
 	outline: none;
 }
 
-h1 {
-	padding: 0.77rem 0;
-	background-color: #121212;
-	text-align: center;
-	font-family: 'Poppins', sans-serif;
-	font-size: 1.88rem;
-	color: #fff;
-}
-
-h1 .highlight {
-	color: #1db954;
-}
-
 h2 {
 	font-family: 'ProximaNova_Regular', 'Poppins', sans-serif;
 	font-size: 1.55rem;

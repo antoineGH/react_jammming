@@ -20,12 +20,10 @@ export default class SearchBar extends Component {
 	render() {
 		return (
 			<div className='SearchBar'>
-				<input onChange={this.handleTermChange} placeholder='Enter A Song, Album, or Artist' />
-				<div className='container_btn'>
-					<button className='button-design' onClick={this.search}>
-						{'SEARCH'.toLowerCase()}
-					</button>
-				</div>
+				<input onChange={this.handleTermChange} placeholder='Search...' />
+				<button className='SearchButton' onClick={this.search}>
+					{<i class='fas fa-search'></i>}
+				</button>
 			</div>
 		)
 	}
