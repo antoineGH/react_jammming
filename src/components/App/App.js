@@ -63,7 +63,7 @@ export default class App extends Component {
 				</h1>
 				<div className='App'>
 					<SearchBar onSearch={this.search} />
-					<div className='App-playlist'>
+					{/* <div className='App-playlist'>
 						<SearchResults SearchResults={this.state.searchResults} onAdd={this.addTrack} onRemove={this.removeTrack} />
 						<Playlist
 							playlistName={this.state.playlistName}
@@ -72,9 +72,9 @@ export default class App extends Component {
 							onNameChange={this.updatePlaylistName}
 							onSave={this.savePlaylist}
 						/>
-					</div>
+					</div> */}
 				</div>
-				<Footer />
+				{/* <Footer /> */}
 			</div>
 		)
 	}

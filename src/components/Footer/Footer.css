@@ -1,0 +1,65 @@
+/* --- Footer --- */
+.Footer {
+	position: relative;
+	padding: 20px;
+	min-height: 150px;
+	display: flex;
+	justify-content: left;
+	background-color: #282828;
+	color: white;
+	display: grid;
+	grid-template: repeat(3, 1fr) / repeat(12, 1fr);
+}
+
+.navigation-footer {
+	grid-area: 1 / 1 / span 1 / span 12;
+	justify-self: center;
+	align-self: center;
+}
+
+.navigation-footer p {
+	font-size: 1rem;
+	display: inline;
+	margin: auto 1rem;
+	cursor: pointer;
+}
+
+.navigation-footer p:hover {
+	color: #1db954;
+}
+
+.signature-footer p {
+	font-size: 1rem;
+	color: #a6a5a5;
+}
+
+.social-footer {
+	grid-area: 2 / 1 / span 1 / span 12;
+	justify-self: center;
+	align-self: center;
+	display: inline-flex;
+}
+
+.social-footer i {
+	color: #221e1e;
+	width: 1.8rem;
+	height: 1.8rem;
+	background-color: white;
+	border-radius: 50%;
+	display: grid;
+	justify-items: center;
+	align-items: center;
+	margin: auto 0.75rem;
+}
+
+.signature-footer {
+	grid-area: 3 / 1 / span 1 / span 12;
+	border-top: 1px solid #a6a5a5;
+	margin-top: 1rem;
+	display: flex;
+	justify-content: space-between;
+}
+
+.signature-footer p {
+	margin-top: 1rem;
+}

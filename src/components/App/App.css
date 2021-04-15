@@ -159,7 +159,7 @@ button:focus {
 
 h1 {
 	padding: 0.77rem 0;
-	background-color: #000000;
+	background-color: #121212;
 	text-align: center;
 	font-family: 'Poppins', sans-serif;
 	font-size: 1.88rem;
@@ -185,7 +185,7 @@ h2 {
 	font-weight: 500;
 	color: #fff;
 	min-height: 1200px;
-	background-image: radial-gradient(circle, #121212, #15171a, #141c20, #132222, #162721);
+	background-color: #181818;
 }
 
 .App-playlist {
@@ -193,6 +193,7 @@ h2 {
 	justify-content: center;
 	margin: auto;
 	width: 60%;
+	margin-top: 3rem;
 }
 
 .Footer {
