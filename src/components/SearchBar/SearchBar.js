@@ -22,7 +22,7 @@ export default class SearchBar extends Component {
 			<div className='SearchBar'>
 				<input onChange={this.handleTermChange} placeholder='Search...' />
 				<button className='SearchButton' onClick={this.search}>
-					{<i class='fas fa-search'></i>}
+					{<i className='fas fa-search'></i>}
 				</button>
 			</div>
 		)

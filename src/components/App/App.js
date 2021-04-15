@@ -1,4 +1,5 @@
 import './App.css'
+import Header from '../Header/Header'
 import SearchBar from '../SearchBar/SearchBar'
 import SearchResults from '../SearchResults/SearchResults'
 import Playlist from '../Playlist/Playlist'
@@ -59,6 +60,7 @@ export default class App extends Component {
 		return (
 			<div>
 				<div className='App'>
+					<Header />
 					<SearchBar onSearch={this.search} />
 					{/* <div className='App-playlist'>
 						<SearchResults SearchResults={this.state.searchResults} onAdd={this.addTrack} onRemove={this.removeTrack} />

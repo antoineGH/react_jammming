@@ -36,10 +36,11 @@
 	cursor: pointer;
 	user-select: none;
 	transition: 300ms ease-in-out;
+	overflow: hidden;
 }
 
 .SearchButton:hover {
-	background-color: #15833b;
+	transform: scale(1.5);
 }
 
 .SearchButton:focus {
