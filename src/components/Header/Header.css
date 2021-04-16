@@ -6,6 +6,8 @@
 	width: 100%;
 	top: 0;
 	z-index: 10;
+	background-color: rgba(30, 31, 32, 0.493);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.562));
 }
 
 .Header p {
@@ -33,11 +35,15 @@
 
 .gridHeader {
 	display: grid;
-	width: 95%;
+	width: 70%;
+	max-width: 1000px;
+	margin: auto;
 	height: 72px;
-	grid-template-columns: minmax(50px, 50px) 4fr repeat(4, 1fr);
-
-	margin-left: 1rem;
+	grid-template-columns: minmax(50px, 75px) repeat(4, 1fr);
 	align-items: center;
-	justify-items: space-around;
+	justify-items: space-between;
+}
+
+.gridHeader img {
+	justify-self: center;
 }

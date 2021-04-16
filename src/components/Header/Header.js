@@ -8,14 +8,14 @@ export default class Header extends Component {
 			<div className='Header'>
 				<div className='gridHeader'>
 					<img src={jammingLogo} alt='logo_jamming' />
-					<p class='jammingTitle'>Jamming</p>
-					<a class='it' href='#overview'>
+					<p className='jammingTitle'>Jamming</p>
+					<a className='overview' href='#overview'>
 						Overview
 					</a>
-					<a class='human' href='#charts'>
+					<a className='charts' href='#charts'>
 						Charts
 					</a>
-					<a class='industries' href='#playlists'>
+					<a className='playlists' href='#playlists'>
 						Playlists
 					</a>
 				</div>

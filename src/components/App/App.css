@@ -172,15 +172,20 @@ h2 {
 	font-weight: 500;
 	color: #fff;
 	min-height: 1200px;
-	background-color: #181818;
+	background-image: url('./img/bg_app.jpeg');
+	background-repeat: no-repeat;
 }
 
 .App-playlist {
-	display: flex;
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
+	justify-items: center;
 	justify-content: center;
+	align-content: center;
 	margin: auto;
-	width: 60%;
-	margin-top: 3rem;
+	margin-top: 2rem;
+	width: 85%;
+	max-width: 1400px;
 }
 
 .Footer {

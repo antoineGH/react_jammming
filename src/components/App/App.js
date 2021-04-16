@@ -6,7 +6,6 @@ import SearchResults from '../SearchResults/SearchResults'
 import Playlist from '../Playlist/Playlist'
 import Spotify from '../../util/Spotify'
 import Footer from '../Footer/Footer'
-
 import React, { Component } from 'react'
 
 export default class App extends Component {
@@ -25,8 +24,6 @@ export default class App extends Component {
 	}
 
 	search(mySearch) {
-		console.log('search')
-		console.log(mySearch)
 		Spotify.search(mySearch).then((searchResults) => this.setState({ searchResults: searchResults }))
 	}
 
@@ -64,7 +61,7 @@ export default class App extends Component {
 					<Header />
 					<Jumbotron />
 					<SearchBar onSearch={this.search} />
-					{/* <div className='App-playlist'>
+					<div className='App-playlist'>
 						<SearchResults SearchResults={this.state.searchResults} onAdd={this.addTrack} onRemove={this.removeTrack} />
 						<Playlist
 							playlistName={this.state.playlistName}
@@ -73,7 +70,7 @@ export default class App extends Component {
 							onNameChange={this.updatePlaylistName}
 							onSave={this.savePlaylist}
 						/>
-					</div> */}
+					</div>
 				</div>
 				<Footer />
 			</div>

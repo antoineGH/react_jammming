@@ -30,13 +30,13 @@ export default class Track extends Component {
 	removeTrack() {
 		this.props.onRemove(this.props.track)
 	}
-
 	render() {
-		const { name, artist, album } = this.props.track
+		const { name, artist, album, image } = this.props.track
 		const { isRemoval } = this.props
 		return (
 			<div className='Track'>
 				<div className='Track-information'>
+					<img className='imgPreview' src={image} alt={name} />
 					<h3>{name}</h3>
 					<p>
 						{artist} | {album}

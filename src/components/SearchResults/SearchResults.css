@@ -1,14 +1,16 @@
 .SearchResults {
-	width: 60%;
-	max-width: 500px;
+	grid-area: 1 / 1 / span 1 / span 7;
+	width: 100%;
 	height: 705px;
 	overflow-y: scroll;
 	padding: 0.88rem;
-	border-radius: 0.3rem;
+	border-radius: 10px;
 	background-color: rgba(30, 31, 32, 0.493);
 	background-image: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.562));
 	padding: 1rem 1rem;
 	margin: 0rem 1rem;
+	justify-self: start;
+	backdrop-filter: blur(5px);
 }
 
 .SearchResults h2 {
