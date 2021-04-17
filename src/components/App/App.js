@@ -6,6 +6,8 @@ import SearchResults from '../SearchResults/SearchResults'
 import Playlist from '../Playlist/Playlist'
 import Spotify from '../../util/Spotify'
 import Footer from '../Footer/Footer'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import React, { Component } from 'react'
 
 export default class App extends Component {
@@ -24,6 +26,9 @@ export default class App extends Component {
 	}
 
 	search(mySearch) {
+		if (!mySearch) {
+			return
+		}
 		Spotify.search(mySearch).then((searchResults) => this.setState({ searchResults: searchResults }))
 	}
 
@@ -36,7 +41,17 @@ export default class App extends Component {
 
 	addTrack(track) {
 		if (this.state.playlistTracks.find((savedTrack) => savedTrack.id === track.id)) {
-			console.log('already existing')
+			// toast('Track already in playlist', {
+			// 	className: 'black-background',
+			// 	bodyClassName: 'grow-font-size',
+			// 	progressClassName: 'fancy-progress-bar',
+			// 	autoClose: 50000,
+			// 	hideProgressBar: false,
+			// 	closeOnClick: true,
+			// 	pauseOnHover: true,
+			// 	draggable: true,
+			// 	progress: undefined,
+			// })
 			return
 		}
 		this.setState({
@@ -62,7 +77,12 @@ export default class App extends Component {
 					<Jumbotron />
 					<SearchBar onSearch={this.search} />
 					<div className='App-playlist'>
-						<SearchResults SearchResults={this.state.searchResults} onAdd={this.addTrack} onRemove={this.removeTrack} />
+						<SearchResults
+							SearchResults={this.state.searchResults}
+							playlistTracks={this.state.playlistTracks}
+							onAdd={this.addTrack}
+							onRemove={this.removeTrack}
+						/>
 						<Playlist
 							playlistName={this.state.playlistName}
 							onRemove={this.removeTrack}
@@ -73,6 +93,18 @@ export default class App extends Component {
 					</div>
 				</div>
 				<Footer />
+				<ToastContainer
+					position='top-right'
+					autoClose={5000}
+					hideProgressBar={false}
+					newestOnTop={false}
+					closeOnClick
+					rtl={false}
+					pauseOnFocusLoss
+					draggable
+					pauseOnHover
+				/>
+				<ToastContainer />
 			</div>
 		)
 	}

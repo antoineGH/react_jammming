@@ -7,6 +7,24 @@ html,
 
 html {
 	font-size: 14px;
+	user-select: none;
+}
+
+/* Toast */
+
+.black-background {
+	background-color: rgba(30, 31, 32, 0.25) !important;
+	background-image: linear-gradient(rgba(0, 0, 0, 0.262), rgba(0, 0, 0, 0.4)) !important;
+	color: white !important;
+	font-family: 'ProximaNova_Regular' !important;
+	font-size: 1.1rem !important;
+	border-radius: 10px !important;
+	top: 70px !important;
+	justify-content: center !important;
+}
+
+.fancy-progress-bar {
+	background: #1db954 !important;
 }
 
 /* --- Font Management --- */

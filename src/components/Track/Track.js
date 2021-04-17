@@ -32,11 +32,11 @@ export default class Track extends Component {
 	}
 	render() {
 		const { name, artist, album, image } = this.props.track
-		const { isRemoval } = this.props
+		const { isRemoval, isPlaylist } = this.props
 		return (
 			<div className='Track'>
-				<div className='Track-information'>
-					<img className='imgPreview' src={image} alt={name} />
+				<div className={isPlaylist ? 'Playlist-information' : 'Track-information'}>
+					{!isPlaylist && <img className='imgPreview' src={image} alt={name} />}
 					<h3>{name}</h3>
 					<p>
 						{artist} | {album}
