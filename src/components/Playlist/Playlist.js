@@ -12,18 +12,22 @@ export default class Playlist extends Component {
 	}
 	render() {
 		return (
-			<div className='Playlist'>
-				<div className='searchContainer'>
-					<i className='far fa-edit'></i>
-					<input onChange={(e) => this.handleNameChange(e)} defaultValue={'New Playlist'} />
-				</div>
-				<TrackList tracks={this.props.playlistTracks} onRemove={this.props.onRemove} isRemoval={true} isPlaylist={true} />
-				<div className='button_container'>
-					<button className='button-design' onClick={this.props.onSave}>
-						{'SAVE TO SPOTIFY'.toLowerCase()}
-					</button>
-				</div>
-			</div>
+			<>
+				{this.props.playlistTracks.length >= 1 && (
+					<div className='Playlist'>
+						<div className='searchContainer'>
+							<i className='far fa-edit'></i>
+							<input onChange={(e) => this.handleNameChange(e)} defaultValue={'New Playlist'} />
+						</div>
+						<TrackList tracks={this.props.playlistTracks} onRemove={this.props.onRemove} isRemoval={true} isPlaylist={true} />
+						<div className='button_container'>
+							<button className='button-design' onClick={this.props.onSave}>
+								{'SAVE TO SPOTIFY'.toLowerCase()}
+							</button>
+						</div>
+					</div>
+				)}
+			</>
 		)
 	}
 }

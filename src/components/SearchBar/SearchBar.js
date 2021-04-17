@@ -9,6 +9,12 @@ export default class SearchBar extends Component {
 		this.state = { term: '' }
 	}
 
+	handleKeyPress(e) {
+		if (e.key === 'Enter') {
+			this.search()
+		}
+	}
+
 	search() {
 		this.props.onSearch(this.state.term)
 	}
@@ -20,7 +26,7 @@ export default class SearchBar extends Component {
 	render() {
 		return (
 			<div className='SearchBar'>
-				<input onChange={this.handleTermChange} placeholder='Search...' />
+				<input onChange={this.handleTermChange} onKeyUp={this.handleKeyPress.bind(this)} placeholder='Search...' />
 				<button className='SearchButton' onClick={this.search}>
 					{<i className='fas fa-search'></i>}
 				</button>
