@@ -10,6 +10,18 @@ import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import React, { Component } from 'react'
 
+// toast('Track already in playlist', {
+// 	className: 'black-background',
+// 	bodyClassName: 'grow-font-size',
+// 	progressClassName: 'fancy-progress-bar',
+// 	autoClose: 50000,
+// 	hideProgressBar: false,
+// 	closeOnClick: true,
+// 	pauseOnHover: true,
+// 	draggable: true,
+// 	progress: undefined,
+// })
+
 export default class App extends Component {
 	constructor(props) {
 		super(props)
@@ -41,19 +53,22 @@ export default class App extends Component {
 
 	addTrack(track) {
 		if (this.state.playlistTracks.find((savedTrack) => savedTrack.id === track.id)) {
-			// toast('Track already in playlist', {
-			// 	className: 'black-background',
-			// 	bodyClassName: 'grow-font-size',
-			// 	progressClassName: 'fancy-progress-bar',
-			// 	autoClose: 50000,
-			// 	hideProgressBar: false,
-			// 	closeOnClick: true,
-			// 	pauseOnHover: true,
-			// 	draggable: true,
-			// 	progress: undefined,
-			// })
 			return
 		}
+		// make a copy of state searchResult
+		const copySearchResult = this.state.searchResults
+
+		// collect the index to remove depending on track.id
+		let removeIndex = copySearchResult
+			.map(function (item) {
+				return item.id
+			})
+			.indexOf(track.id)
+
+		// remove the object from the array
+		copySearchResult.splice(removeIndex, 1)
+		this.setState({ searchResults: copySearchResult })
+
 		this.setState({
 			playlistTracks: [...this.state.playlistTracks, track],
 		})

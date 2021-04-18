@@ -6,6 +6,13 @@ export default class TrackList extends Component {
 	render() {
 		if (this.props.tracks) {
 			return this.props.tracks.map((track) => {
+				if (!this.props.isPlaylist) {
+					this.props.playlistTracks.forEach((playlistTrack) => {
+						if (playlistTrack.id === track.id) {
+							return <h1>already</h1>
+						}
+					})
+				}
 				return (
 					<Track
 						key={track.id}
