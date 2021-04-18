@@ -76,8 +76,16 @@ export default class App extends Component {
 
 	removeTrack(track) {
 		let copyTracks = this.state.playlistTracks
-		let keepTracks = copyTracks.filter((trackToRemove) => trackToRemove.id !== track.id)
-		this.setState({ playlistTracks: keepTracks })
+		let removeTrack = copyTracks.filter((myTrack) => myTrack.id === track.id)
+		let keepTracks = copyTracks.filter((myTrack) => myTrack.id !== track.id)
+
+		// make a copy of state searchResult
+		const copySearchResult = this.state.searchResults
+
+		// add the object at the beginning of the array
+		copySearchResult.unshift(removeTrack[0])
+
+		this.setState({ playlistTracks: keepTracks, searchResults: copySearchResult })
 	}
 
 	updatePlaylistName(newPlaylistName) {
@@ -85,6 +93,7 @@ export default class App extends Component {
 	}
 
 	render() {
+		console.log(this.state.searchResults)
 		return (
 			<div>
 				<div className='App'>
