@@ -82,8 +82,16 @@ export default class App extends Component {
 		// make a copy of state searchResult
 		const copySearchResult = this.state.searchResults
 
-		// add the object at the beginning of the array
-		copySearchResult.unshift(removeTrack[0])
+		let dupplicateIndex = copySearchResult
+			.map(function (item) {
+				return item.id
+			})
+			.indexOf(track.id)
+
+		if (dupplicateIndex === -1) {
+			// add the object at the beginning of the array
+			copySearchResult.unshift(removeTrack[0])
+		}
 
 		this.setState({ playlistTracks: keepTracks, searchResults: copySearchResult })
 	}
@@ -93,7 +101,6 @@ export default class App extends Component {
 	}
 
 	render() {
-		console.log(this.state.searchResults)
 		return (
 			<div>
 				<div className='App'>

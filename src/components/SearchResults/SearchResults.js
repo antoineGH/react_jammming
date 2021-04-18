@@ -15,6 +15,7 @@ export default class SearchResults extends Component {
 						onAdd={this.props.onAdd}
 						isRemoval={false}
 						isPlaylist={false}
+						onRemoveResult={this.props.onRemoveResult}
 					/>
 				</div>
 				{/* )} */}
