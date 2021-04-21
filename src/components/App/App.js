@@ -6,21 +6,9 @@ import SearchResults from '../SearchResults/SearchResults'
 import Playlist from '../Playlist/Playlist'
 import Spotify from '../../util/Spotify'
 import Footer from '../Footer/Footer'
-import { ToastContainer } from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import React, { Component } from 'react'
-
-// toast('Track already in playlist', {
-// 	className: 'black-background',
-// 	bodyClassName: 'grow-font-size',
-// 	progressClassName: 'fancy-progress-bar',
-// 	autoClose: 50000,
-// 	hideProgressBar: false,
-// 	closeOnClick: true,
-// 	pauseOnHover: true,
-// 	draggable: true,
-// 	progress: undefined,
-// })
 
 export default class App extends Component {
 	constructor(props) {
@@ -30,8 +18,9 @@ export default class App extends Component {
 			searchResults: [],
 			playlistName: 'myPlayListName',
 			playlistTracks: [],
-			hasError: true,
+			hasError: false,
 			isLoading: false,
+			isLoadingPlaylist: false,
 		}
 		this.addTrack = this.addTrack.bind(this)
 		this.removeTrack = this.removeTrack.bind(this)
@@ -54,11 +43,61 @@ export default class App extends Component {
 			})
 	}
 
+	getPlaylistURL(response) {
+		if (!response || response.hasOwnProperty('url')) {
+			return false
+		}
+		let playlistURL = response.url.split('/')
+		return playlistURL[7]
+	}
+
 	savePlaylist() {
+		this.setState({ isLoadingPlaylist: true })
 		const trackUris = this.state.playlistTracks.map((track) => track.uri)
-		Spotify.savePlaylist(this.state.playlistName, trackUris).then(() => {
-			this.setState({ playlistName: 'New PlayList', playlistTracks: [] })
-		})
+		Spotify.savePlaylist(this.state.playlistName, trackUris)
+			.then((response) => {
+				const playlistURL = this.getPlaylistURL(response)
+				const message = (
+					<>
+						<a target='blank' href={`https://open.spotify.com/playlist/${playlistURL}`} className='linkToast'>
+							Playlist
+						</a>
+						<p>added to Spotify.</p>
+					</>
+				)
+				toast(message, {
+					className: 'black-background',
+					bodyClassName: 'grow-font-size',
+					progressClassName: 'fancy-progress-bar',
+					position: 'top-right',
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+				})
+				this.setState({ playlistName: 'New PlayList', playlistTracks: [] })
+				setTimeout(() => {
+					this.setState({ isLoadingPlaylist: false })
+				}, 500)
+			})
+			.catch((error) => {
+				console.log(error)
+				this.setState({ isLoadingPlaylist: false })
+				toast('Error Adding the Playlist', {
+					className: 'black-background',
+					bodyClassName: 'grow-font-size',
+					progressClassName: 'fancy-progress-bar',
+					position: 'top-right',
+					autoClose: 5000,
+					hideProgressBar: false,
+					closeOnClick: true,
+					pauseOnHover: true,
+					draggable: true,
+					progress: undefined,
+				})
+			})
 	}
 
 	addTrack(track) {
