@@ -233,10 +233,13 @@ h2 {
 	height: 50px;
 }
 
-@media only screen and (max-width: 1020px) {
+@media (min-width: 992px) and (max-width: 1200px) {
 	.App-playlist {
 		align-items: center;
 		flex-direction: column;
+	}
+	.button_container {
+		margin: 3rem 0rem;
 	}
 }
 
