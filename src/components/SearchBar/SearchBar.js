@@ -27,7 +27,7 @@ export default class SearchBar extends Component {
 		return (
 			<div className='SearchBar'>
 				<input onChange={this.handleTermChange} onKeyUp={this.handleKeyPress.bind(this)} placeholder='Search...' />
-				<button className='SearchButton' onClick={this.search}>
+				<button onClick={this.search} className='SearchButton'>
 					{<i className='fas fa-search'></i>}
 				</button>
 			</div>

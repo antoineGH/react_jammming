@@ -30,6 +30,13 @@ export default class App extends Component {
 		this.tryAgainSearch = this.tryAgainSearch.bind(this)
 	}
 
+	componentDidMount() {
+		// window.addEventListener('load', Spotify.search(''))
+		window.addEventListener('load', () => {
+			Spotify.getAccessToken()
+		})
+	}
+
 	search(mySearch) {
 		if (!mySearch) {
 			return
