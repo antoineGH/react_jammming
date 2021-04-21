@@ -56,3 +56,10 @@
 		margin-bottom: 2rem;
 	}
 }
+
+@media (min-width: 576px) and (max-width: 768px) {
+	.SearchResults {
+		margin: 0rem 0rem;
+		width: 85%;
+	}
+}

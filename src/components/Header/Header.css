@@ -47,6 +47,27 @@
 	justify-self: center;
 }
 
+@media (max-width: 768px) {
+	.gridHeader a {
+		display: none;
+	}
+
+	.gridHeader {
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+	}
+
+	.gridHeader p {
+		justify-self: center;
+		align-items: center;
+	}
+
+	.gridHeader img {
+		padding-right: 1rem;
+	}
+}
+
 @media (min-width: 768px) and (max-width: 992px) {
 	.gridHeader {
 		width: 90%;
