@@ -178,6 +178,7 @@ export default class App extends Component {
 							playlistTracks={playlistTracks}
 							onNameChange={this.updatePlaylistName}
 							onSave={this.savePlaylist}
+							isLoadingPlaylist={this.state.isLoadingPlaylist}
 						/>
 					</div>
 				</div>
