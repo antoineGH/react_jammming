@@ -12,14 +12,36 @@ html {
 
 /* Toast */
 
+.Toastify__toast {
+	padding: 4px !important;
+}
+
+.Toastify__close-button--default {
+	color: white !important;
+}
+
+.Toastify__toast-body {
+	width: 100% !important;
+	display: inherit !important;
+	justify-content: center !important;
+}
+
+.linkToast {
+	text-decoration: none;
+	color: #1db954;
+	font-family: 'ProximaNova_Regular';
+	font-size: 1.2rem;
+	align-self: center;
+	padding-right: 0.5rem;
+}
+
 .black-background {
-	background-color: rgba(30, 31, 32, 0.25) !important;
+	background-color: rgb(30 31 32 / 100%) !important;
 	background-image: linear-gradient(rgba(0, 0, 0, 0.262), rgba(0, 0, 0, 0.4)) !important;
 	color: white !important;
 	font-family: 'ProximaNova_Regular' !important;
 	font-size: 1.1rem !important;
-	border-radius: 10px !important;
-	top: 70px !important;
+	border-radius: 5px !important;
 	justify-content: center !important;
 }
 

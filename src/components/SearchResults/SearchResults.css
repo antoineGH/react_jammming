@@ -25,6 +25,25 @@
 	background: transparent;
 }
 
+.loading,
+.hasError {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 3rem;
+}
+
+.loading span {
+	border-radius: 12px;
+}
+
+.errorAPI {
+	padding: 0rem;
+	margin: 0rem;
+	font-family: 'ProximaNova_Light';
+	font-size: 1.1rem;
+}
+
 @media only screen and (max-width: 1020px) {
 	.SearchResults {
 		width: 100%;
