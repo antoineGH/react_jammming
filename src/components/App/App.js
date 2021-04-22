@@ -188,8 +188,8 @@ export default class App extends Component {
 							isLoadingPlaylist={this.state.isLoadingPlaylist}
 						/>
 					</div>
+					<Footer />
 				</div>
-				<Footer />
 				<ToastContainer
 					position='top-right'
 					autoClose={5000}

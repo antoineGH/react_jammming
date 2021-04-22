@@ -5,7 +5,10 @@
 	min-height: 150px;
 	display: flex;
 	justify-content: left;
-	background-color: #282828;
+	grid-template: repeat(3, 1fr) / repeat(12, 1fr);
+	background-color: rgba(30, 31, 32, 0.493);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.562));
+	margin-top: 5rem;
 	color: white;
 	display: grid;
 	grid-template: repeat(3, 1fr) / repeat(12, 1fr);
