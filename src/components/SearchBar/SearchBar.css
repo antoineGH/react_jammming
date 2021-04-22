@@ -47,3 +47,19 @@
 	text-decoration: none;
 	outline: none;
 }
+
+@media (max-width: 576px) {
+	.SearchBar {
+		width: 90%;
+		margin-left: 3rem;
+	}
+
+	.SearchBar input {
+		width: 100%;
+		min-width: 50px;
+	}
+
+	.SearchButton {
+		width: 43px;
+	}
+}
