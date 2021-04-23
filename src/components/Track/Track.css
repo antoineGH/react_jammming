@@ -93,12 +93,24 @@
 	grid-area: 2 / 1 / span 1 / span 10;
 }
 
+.Track-information p.previewNotAvailable {
+	grid-area: 1 / 7 / span 2 / span 6;
+	align-self: center;
+	height: 42px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-left: 1rem;
+	padding-top: 0.7rem;
+}
+
 .imgPreview {
 	height: 48px;
 	height: 48px;
 	border-radius: 3px;
 	grid-area: 1 / 1 / span 2 / span 2;
 	align-self: center;
+	overflow: hidden;
 }
 
 @media (max-width: 992px) {

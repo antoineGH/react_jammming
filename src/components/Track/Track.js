@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import './Track.css'
 import AudioPreview from '../AudioPreview/AudioPreview'
+import Image from '../Image/Image'
 
 export default class Track extends Component {
 	constructor(props) {
@@ -39,8 +40,9 @@ export default class Track extends Component {
 				<div className={isPlaylist ? 'Playlist-information' : 'Track-information'}>
 					{!isPlaylist && (
 						<>
-							<img className='imgPreview' src={image} alt={name} />
-							<AudioPreview preview={preview} />
+							{/* <img className='imgPreview' src={image} alt={name} /> */}
+							<Image image={image} name={name} />
+							{preview ? <AudioPreview preview={preview} /> : <p className='previewNotAvailable'>Preview not available</p>}
 						</>
 					)}
 					{/* {!isPlaylist && <audio controls src={preview}></audio>} */}
