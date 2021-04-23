@@ -37,7 +37,6 @@
 }
 
 .fa-edit {
-	/* padding-top: 0.3rem; */
 	padding-right: 0.5rem;
 	align-self: center;
 }
@@ -80,8 +79,7 @@
 	min-width: 100px;
 	max-width: 200px;
 	width: 50%;
-	margin: 0rem 0rem;
-	align-self: flex-start;
+	margin: 0rem;
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {

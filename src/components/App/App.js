@@ -31,7 +31,6 @@ export default class App extends Component {
 	}
 
 	componentDidMount() {
-		// window.addEventListener('load', Spotify.search(''))
 		window.addEventListener('load', () => {
 			Spotify.getAccessToken()
 		})
@@ -67,7 +66,7 @@ export default class App extends Component {
 				const message = (
 					<>
 						<a target='blank' href={`https://open.spotify.com/playlist/${playlistURL}`} className='linkToast'>
-							Playlist
+							{this.state.playlistName}
 						</a>
 						<p>added to Spotify.</p>
 					</>

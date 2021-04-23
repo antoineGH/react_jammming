@@ -20,7 +20,7 @@ export default class Playlist extends Component {
 						<i className='far fa-edit'></i>
 						<input onChange={(e) => this.handleNameChange(e)} defaultValue={'New Playlist'} />
 						<div className='button_container'>
-							<button disabled={false} className='button-design' onClick={onSave}>
+							<button disabled={!playlistTracks.length >= 1 || isLoadingPlaylist} className='button-design' onClick={onSave}>
 								{'SAVE TO SPOTIFY'.toLowerCase()}
 							</button>
 						</div>
