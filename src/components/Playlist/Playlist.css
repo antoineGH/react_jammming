@@ -78,13 +78,30 @@
 .button_container {
 	min-width: 100px;
 	max-width: 200px;
-	width: 50%;
+	width: 80%;
 	margin: 0rem;
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
 	.Playlist {
 		width: auto;
+	}
+}
+
+@media (max-width: 992px) {
+	.searchContainer {
+		display: grid;
+		grid-template: repeat(2, 1fr) / repeat(12, 1fr);
+	}
+	.Playlist input {
+		grid-area: 1 / 2 / span 1 / span 12;
+	}
+
+	.button_container {
+		grid-area: 2 / 1 / span 1 / span 12;
+		justify-self: center;
+		width: auto;
+		margin-top: 0.5rem;
 	}
 }
 
