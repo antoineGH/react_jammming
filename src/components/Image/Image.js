@@ -10,7 +10,6 @@ export default function Image(props) {
 			(entries) =>
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						console.log('intersect')
 						thisImage.current.src = image
 						observer = observer.disconnect()
 					}
