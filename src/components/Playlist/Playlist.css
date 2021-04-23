@@ -23,9 +23,10 @@
 	font-family: 'Poppins', sans-serif;
 	font-size: 1.55rem;
 	color: #fff;
-	padding-bottom: 1rem;
 	font-family: 'ProximaNova_Regular', 'Poppins', sans-serif;
 	font-size: 1.55rem;
+	align-self: center;
+	padding: 0.1rem;
 }
 
 .loading {
@@ -36,16 +37,19 @@
 }
 
 .fa-edit {
-	padding-top: 0.3rem;
+	/* padding-top: 0.3rem; */
 	padding-right: 0.5rem;
+	align-self: center;
 }
 
 .searchContainer {
 	display: inline-flex;
 	overflow: hidden;
 	border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
-	padding-top: 1.3rem;
+	padding: 1rem 0rem;
 	width: 100%;
+	align-items: flex-start;
+	margin-bottom: 1.3rem;
 }
 
 .Playlist-save {
@@ -70,6 +74,14 @@
 ::-webkit-scrollbar {
 	width: 0px;
 	background: transparent;
+}
+
+.button_container {
+	min-width: 100px;
+	max-width: 200px;
+	width: 50%;
+	margin: 0rem 0rem;
+	align-self: flex-start;
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {

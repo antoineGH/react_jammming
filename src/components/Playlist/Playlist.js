@@ -19,20 +19,19 @@ export default class Playlist extends Component {
 					<div className='searchContainer'>
 						<i className='far fa-edit'></i>
 						<input onChange={(e) => this.handleNameChange(e)} defaultValue={'New Playlist'} />
+						<div className='button_container'>
+							<button disabled={false} className='button-design' onClick={onSave}>
+								{'SAVE TO SPOTIFY'.toLowerCase()}
+							</button>
+						</div>
 					</div>
+
 					{isLoadingPlaylist && (
 						<div className='loading'>
 							<BarLoader color={'rgb(255 255 255 / 40%)'} height={6} width={120} size={20} />
 						</div>
 					)}
 					<TrackList tracks={playlistTracks} onRemove={onRemove} isRemoval={true} isPlaylist={true} />
-					{playlistTracks.length >= 1 && !isLoadingPlaylist && (
-						<div className='button_container'>
-							<button className='button-design' onClick={onSave}>
-								{'SAVE TO SPOTIFY'.toLowerCase()}
-							</button>
-						</div>
-					)}
 				</div>
 			</>
 		)

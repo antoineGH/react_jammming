@@ -185,7 +185,7 @@ button:focus {
 	transform-origin: left;
 }
 
-.button-design:hover::before,
+.button-design:hover:enabled:before,
 .button-design:focus::before {
 	transform: scaleX(1);
 }
