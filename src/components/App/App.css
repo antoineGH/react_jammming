@@ -265,11 +265,13 @@ h2 {
 }
 
 @media (min-width: 576px) and (max-width: 768px) {
-	.App-playlist {
-		width: 92%;
-	}
 	.button_container {
 		width: auto;
+	}
+
+	.App-playlist {
+		width: 92%;
+		grid-template-rows: 2fr;
 	}
 }
 
