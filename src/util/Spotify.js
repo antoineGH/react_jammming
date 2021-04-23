@@ -36,6 +36,7 @@ const Spotify = {
 			album: track.album.name,
 			image: track.album.images[2].url,
 			uri: track.uri,
+			preview: track.preview_url,
 		}))
 	},
 	savePlaylist(name, trackUris) {

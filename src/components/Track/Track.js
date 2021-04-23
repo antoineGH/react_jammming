@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import './Track.css'
+import AudioPreview from '../AudioPreview/AudioPreview'
 
 export default class Track extends Component {
 	constructor(props) {
@@ -31,12 +32,18 @@ export default class Track extends Component {
 		this.props.onRemove(this.props.track)
 	}
 	render() {
-		const { name, artist, album, image } = this.props.track
+		const { name, artist, album, image, preview } = this.props.track
 		const { isRemoval, isPlaylist } = this.props
 		return (
 			<div className='Track'>
 				<div className={isPlaylist ? 'Playlist-information' : 'Track-information'}>
-					{!isPlaylist && <img className='imgPreview' src={image} alt={name} />}
+					{!isPlaylist && (
+						<>
+							<img className='imgPreview' src={image} alt={name} />
+							<AudioPreview preview={preview} />
+						</>
+					)}
+					{/* {!isPlaylist && <audio controls src={preview}></audio>} */}
 					<h3>{name}</h3>
 					<p>
 						{artist} | {album}

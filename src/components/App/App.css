@@ -49,6 +49,21 @@ html {
 	background: #1db954 !important;
 }
 
+/* Audio Player */
+
+.audio-player {
+	height: 50px;
+	width: 350px;
+	background: #444;
+	box-shadow: 0 0 20px 0 #000a;
+	font-family: arial;
+	color: white;
+	font-size: 0.75em;
+	overflow: hidden;
+	display: grid;
+	grid-template-rows: 6px auto;
+}
+
 /* --- Font Management --- */
 
 @font-face {
