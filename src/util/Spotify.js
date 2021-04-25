@@ -40,6 +40,19 @@ const Spotify = {
 			preview: track.preview_url,
 		}))
 	},
+	async getPlaylist() {
+		const accessToken = Spotify.getAccessToken()
+		const response = await fetch('https://api.spotify.com/v1/me/playlists', { headers: { Authorization: `Bearer ${accessToken}` } })
+		const responseJson = await response.json()
+		return responseJson.items.map((playlist) => ({
+			id: playlist.id,
+			name: playlist.name,
+			image: playlist.images[0],
+			playlistUrl: playlist.external_urls.spotify,
+			tracksUrl: playlist.tracks.href,
+			public: playlist.public,
+		}))
+	},
 	savePlaylist(name, trackUris) {
 		if (!name || !trackUris.length) {
 			return
