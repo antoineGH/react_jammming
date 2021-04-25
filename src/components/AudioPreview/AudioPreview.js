@@ -6,13 +6,10 @@ export default function AudioPreview(props) {
 	const thisPreview = useRef()
 
 	useEffect(() => {
-		console.log('useEffect')
-		console.log(thisPreview.currentSrc)
 		let myObserver = new IntersectionObserver(
 			(entries) =>
 				entries.forEach((entry) => {
 					if (entry.isIntersecting) {
-						console.log('interect audio')
 						thisPreview.current.src = preview
 						myObserver = myObserver.disconnect()
 					}

@@ -32,6 +32,28 @@ export default class Track extends Component {
 	removeTrack() {
 		this.props.onRemove(this.props.track)
 	}
+
+	formatName(name) {
+		if (name.length > 30) {
+			return name.slice(0, 25) + '..'
+		}
+		return name
+	}
+
+	formatArtist(artist) {
+		if (artist.length > 30) {
+			return artist.slice(0, 15) + '..'
+		}
+		return artist
+	}
+
+	formatAlbum(album) {
+		if (album.length > 30) {
+			return album.slice(0, 10) + '..'
+		}
+		return album
+	}
+
 	render() {
 		const { name, artist, album, image, preview } = this.props.track
 		const { isRemoval, isPlaylist } = this.props
@@ -40,15 +62,14 @@ export default class Track extends Component {
 				<div className={isPlaylist ? 'Playlist-information' : 'Track-information'}>
 					{!isPlaylist && (
 						<>
-							{/* <img className='imgPreview' src={image} alt={name} /> */}
 							<Image image={image} name={name} />
 							{preview ? <AudioPreview preview={preview} /> : <p className='previewNotAvailable'>Preview not available</p>}
 						</>
 					)}
-					{/* {!isPlaylist && <audio controls src={preview}></audio>} */}
-					<h3>{name}</h3>
+
+					<h3>{this.formatName(name)}</h3>
 					<p>
-						{artist} | {album}
+						{this.formatArtist(artist)} | {this.formatAlbum(album)}
 					</p>
 				</div>
 				{this.renderAction(isRemoval)}

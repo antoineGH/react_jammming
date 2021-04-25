@@ -68,3 +68,6 @@
 	color: #a6a5a5;
 	padding: 0rem 1rem;
 }
+
+@media (max-width: 576px) {
+}

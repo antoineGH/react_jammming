@@ -59,17 +59,19 @@
 
 @media (min-width: 576px) and (max-width: 768px) {
 	.SearchResults {
-		margin: 0rem 0rem;
-		width: 85%;
-		justify-self: center;
+		grid-area: 1 / 1 / span 1 / span 12;
+		width: 95%;
+		margin: 0rem;
+		height: 500px;
 	}
 }
 
 @media (max-width: 576px) {
 	.SearchResults {
 		grid-area: 1 / 1 / span 1 / span 12;
-		width: 95%;
-		margin: 0rem;
+		/* margin: 0rem; */
 		height: 500px;
+		width: 90%;
+		margin: auto;
 	}
 }
