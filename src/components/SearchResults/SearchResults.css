@@ -13,9 +13,11 @@
 }
 
 .SearchResults h2 {
+	font-size: 1.3rem;
 	border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
 	margin-bottom: 0.75rem;
 	padding-bottom: 1.7rem;
+	padding-left: 0.5rem;
 	user-select: none;
 }
 

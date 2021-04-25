@@ -187,7 +187,7 @@ export default class App extends Component {
 							isLoadingPlaylist={this.state.isLoadingPlaylist}
 						/>
 					</div>
-					{/* <Footer /> */}
+					<Footer />
 				</div>
 				<ToastContainer
 					position='top-right'
