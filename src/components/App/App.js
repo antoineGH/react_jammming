@@ -21,6 +21,7 @@ export default class App extends Component {
 			hasError: false,
 			isLoading: false,
 			isLoadingPlaylist: false,
+			currentPlaylist: [],
 		}
 		this.addTrack = this.addTrack.bind(this)
 		this.removeTrack = this.removeTrack.bind(this)
@@ -33,6 +34,13 @@ export default class App extends Component {
 	componentDidMount() {
 		window.addEventListener('load', () => {
 			Spotify.getAccessToken()
+		})
+		this.getPlaylist()
+	}
+
+	getPlaylist() {
+		Spotify.getPlaylist().then((responseJson) => {
+			console.log(responseJson)
 		})
 	}
 
