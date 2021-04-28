@@ -1,14 +1,14 @@
 import './App.css'
-import Header from '../Header/Header'
-import Jumbotron from '../Jumbotron/Jumbotron'
-import SearchBar from '../SearchBar/SearchBar'
-import SearchResults from '../SearchResults/SearchResults'
-import Playlist from '../Playlist/Playlist'
-import Spotify from '../../util/Spotify'
-import Footer from '../Footer/Footer'
+import React, { Component } from 'react'
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import React, { Component } from 'react'
+import Header from '../Header/Header'
+import Jumbotron from '../Jumbotron/Jumbotron'
+import Spotify from '../../util/Spotify'
+import Footer from '../Footer/Footer'
+import MyPlaylists from '../MyPlaylists/MyPlaylists'
+import Home from '../Home/Home'
 
 export default class App extends Component {
 	constructor(props) {
@@ -35,7 +35,7 @@ export default class App extends Component {
 		window.addEventListener('load', () => {
 			Spotify.getAccessToken()
 		})
-		this.getPlaylist()
+		// this.getPlaylist()
 	}
 
 	getPlaylist() {
@@ -169,33 +169,38 @@ export default class App extends Component {
 	}
 
 	render() {
-		const { hasError, isLoading, searchResults, playlistTracks, playlistName } = this.state
+		const { hasError, isLoading, searchResults, playlistTracks, playlistName, isLoadingPlaylist } = this.state
 		return (
 			<div>
 				<div className='App'>
-					<Header />
-					<Jumbotron />
-					<SearchBar onSearch={this.search} />
-					<div className='App-playlist'>
-						<SearchResults
-							hasError={hasError}
-							isLoading={isLoading}
-							SearchResults={searchResults}
-							playlistTracks={playlistTracks}
-							onAdd={this.addTrack}
-							onRemove={this.removeTrack}
-							onTryAgain={this.tryAgainSearch}
-						/>
-						<Playlist
-							playlistName={playlistName}
-							onRemove={this.removeTrack}
-							playlistTracks={playlistTracks}
-							onNameChange={this.updatePlaylistName}
-							onSave={this.savePlaylist}
-							isLoadingPlaylist={this.state.isLoadingPlaylist}
-						/>
-					</div>
-					<Footer />
+					<Router>
+						<Header />
+						<Jumbotron />
+						<Switch>
+							<Route
+								path='/'
+								exact
+								component={() => (
+									<Home
+										onSearch={this.search}
+										hasError={hasError}
+										isLoading={isLoading}
+										searchResults={searchResults}
+										playlistTracks={playlistTracks}
+										onAdd={this.addTrack}
+										onRemove={this.removeTrack}
+										onTryAgain={this.tryAgainSearch}
+										playlistName={playlistName}
+										onNameChange={this.updatePlaylistName}
+										onSave={this.savePlaylist}
+										isLoadingPlaylist={isLoadingPlaylist}
+									/>
+								)}
+							/>
+							<Route path='/playlists' exact component={MyPlaylists} />
+						</Switch>
+						<Footer />
+					</Router>
 				</div>
 				<ToastContainer
 					position='top-right'
