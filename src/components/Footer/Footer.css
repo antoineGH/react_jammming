@@ -16,8 +16,26 @@
 
 .navigation-footer {
 	grid-area: 1 / 1 / span 1 / span 12;
-	justify-self: center;
+	display: flex;
+	width: 30%;
+	margin: auto;
+	justify-content: space-around;
 	align-self: center;
+}
+
+.Footer a {
+	color: white;
+	text-decoration: none;
+	font-family: 'ProximaNova_Semibold';
+	font-weight: bold;
+	font-size: 1.1rem;
+	text-transform: uppercase;
+	justify-self: space-between;
+	transition: 0.5s;
+}
+
+.Footer a:hover {
+	color: #1db954;
 }
 
 .navigation-footer p {
@@ -43,14 +61,21 @@
 
 .social-footer i {
 	color: #221e1e;
-	width: 1.8rem;
-	height: 1.8rem;
+	width: 2.5rem;
+	height: 2.5rem;
 	background-color: white;
 	border-radius: 50%;
 	display: grid;
 	justify-items: center;
 	align-items: center;
 	margin: auto 0.75rem;
+	transition: 0.5s;
+	cursor: pointer;
+	font-size: 1.5rem;
+}
+
+.social-footer i:hover {
+	background-color: #1db954;
 }
 
 .signature-footer {

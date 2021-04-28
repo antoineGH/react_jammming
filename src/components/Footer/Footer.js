@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import './Footer.css'
 
 export default class Footer extends Component {
@@ -6,10 +7,8 @@ export default class Footer extends Component {
 		return (
 			<div className='Footer'>
 				<div className='navigation-footer'>
-					<p>Jamming</p>
-					<p>Overview</p>
-					<p>Charts</p>
-					<p>Playlists</p>
+					<Link to='/'>Create Playlist</Link>
+					<Link to='/playlists'>My Playlists</Link>
 				</div>
 				<div className='social-footer'>
 					<i className='fab fa-linkedin-in fa-lg'></i>
