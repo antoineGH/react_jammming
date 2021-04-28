@@ -36,19 +36,21 @@
 
 .fa-edit {
 	padding-right: 0.5rem;
-	align-self: center;
+}
+
+form {
+	width: 100%;
 }
 
 .searchContainer {
 	display: grid;
-	grid-template-columns: 0.2fr 2fr 1fr;
-	overflow: hidden;
-	border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
-	padding: 1rem 0rem;
-	padding-left: 1.5rem;
-	width: 100%;
-	align-items: flex-start;
-	margin-bottom: 1.3rem;
+	grid-template: 1fr 0.5fr 1fr / 1fr;
+}
+
+.inputGroup {
+	display: flex;
+	align-self: center;
+	padding: 1.5rem 0rem 0.2rem 0rem;
 }
 
 .Playlist-save {
@@ -76,10 +78,17 @@
 }
 
 .button_container {
-	min-width: 100px;
-	max-width: 200px;
-	width: 80%;
-	margin: 0rem;
+	grid-area: 3 / 1 / span 1 / span 1;
+	justify-self: center;
+	align-self: center;
+}
+
+.error_container {
+	grid-area: 2 / 1 / span 1 / span 1;
+	align-self: center;
+}
+.error_field {
+	color: red;
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
