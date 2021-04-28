@@ -5,7 +5,7 @@ import { Form, FormGroup, InputGroup } from 'react-bootstrap'
 
 export default function PlaylistForm(props) {
 	const { playlistTracks, isLoadingPlaylist } = props
-	const regexNoSpecial = /^[a-zA-Z. ]*$/
+	const regexNoSpecial = /^[a-zA-Z0-9. ]*$/
 	const noDefault = /^((?!Playlist Name)[\s\S])*$/
 	const validationSchema = Yup.object({
 		playlistTracks: Yup.array().min(1, 'Please add at least one track'),
@@ -25,8 +25,13 @@ export default function PlaylistForm(props) {
 		validationSchema,
 		onSubmit(values) {
 			console.log(values)
+			savePlaylist()
 		},
 	})
+
+	const savePlaylist = () => {
+		props.onSave(values.playlistName)
+	}
 
 	return (
 		<Form role='form' onSubmit={handleSubmit}>
