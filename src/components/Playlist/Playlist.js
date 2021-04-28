@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import TrackList from '../TrackList/TrackList'
+import PlaylistForm from '../PlaylistForm/PlaylistForm'
 import './Playlist.css'
 import BarLoader from 'react-spinners/BarLoader'
 
@@ -23,16 +24,7 @@ export default class Playlist extends Component {
 		return (
 			<>
 				<div className='Playlist'>
-					<div className='searchContainer'>
-						<i className='far fa-edit'></i>
-						<input onChange={this.handleNameChange} value={this.state.playlistName}></input>
-						<div className='button_container'>
-							<button disabled={!playlistTracks.length >= 1 || isLoadingPlaylist} className='button-design' onClick={this.handleSubmit}>
-								{'SAVE TO SPOTIFY'.toLowerCase()}
-							</button>
-						</div>
-					</div>
-
+					<PlaylistForm playlistTracks={playlistTracks} isLoadingPlaylist={isLoadingPlaylist} />
 					{isLoadingPlaylist && (
 						<div className='loading'>
 							<BarLoader color={'rgb(255 255 255 / 40%)'} height={6} width={120} size={20} />
