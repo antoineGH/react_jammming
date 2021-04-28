@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import jammingLogo from './img/logo_music.png'
 import './Header.css'
 
@@ -9,15 +10,8 @@ export default class Header extends Component {
 				<div className='gridHeader'>
 					<img src={jammingLogo} alt='logo_jamming' />
 					<p className='jammingTitle'>Jamming</p>
-					<a className='overview' href='#overview'>
-						Overview
-					</a>
-					<a className='charts' href='#charts'>
-						Charts
-					</a>
-					<a className='playlists' href='#playlists'>
-						Playlists
-					</a>
+					<Link to='/'>Create Playlist</Link>
+					<Link to='/playlists'>My Playlists</Link>
 				</div>
 			</div>
 		)
