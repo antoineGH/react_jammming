@@ -80,8 +80,13 @@ form {
 .button_container {
 	grid-area: 3 / 1 / span 1 / span 1;
 	justify-self: center;
+	align-self: center;
 }
 
+.error_container {
+	grid-area: 2 / 1 / span 1 / span 1;
+	align-self: center;
+}
 .error_field {
 	color: red;
 }

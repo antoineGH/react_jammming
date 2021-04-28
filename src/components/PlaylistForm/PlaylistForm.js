@@ -6,18 +6,21 @@ import { Form, FormGroup, InputGroup } from 'react-bootstrap'
 export default function PlaylistForm(props) {
 	const { playlistTracks, isLoadingPlaylist } = props
 	const regexNoSpecial = /^[a-zA-Z. ]*$/
-
+	const noDefault = /^((?!Playlist Name)[\s\S])*$/
 	const validationSchema = Yup.object({
+		playlistTracks: Yup.array().min(1, 'Please add at least one track'),
 		playlistName: Yup.string()
 			.min(4, 'Playlist name too short')
 			.max(25, 'Playlist name too long')
+			.matches(noDefault, 'Please choose a playlist name')
 			.matches(regexNoSpecial, "Playlist shoudln't contain special characters")
 			.required('Playlist name required'),
 	})
 
 	const { handleSubmit, handleChange, handleBlur, values, touched, errors } = useFormik({
 		initialValues: {
-			playlistName: 'PlaylistName',
+			playlistName: 'Playlist Name',
+			playlistTracks: playlistTracks,
 		},
 		validationSchema,
 		onSubmit(values) {
@@ -36,9 +39,12 @@ export default function PlaylistForm(props) {
 					</InputGroup.Prepend>
 					<Form.Control id='playlistName' name='playlistName' type='text' onBlur={handleBlur} onChange={handleChange} value={values.playlistName} />
 				</InputGroup>
-				{errors.playlistName && touched.playlistName && <div className='error_field'>{errors.playlistName}</div>}
+				<div className='error_container'>
+					{errors.playlistName && touched.playlistName && <div className='error_field'>{errors.playlistName}</div>}
+					{errors.playlistTracks && touched.playlistTracks && <div className='error_field'>{errors.playlistTracks}</div>}
+				</div>
 				<div className='button_container'>
-					<button disabled={!playlistTracks.lenght >= 1 || isLoadingPlaylist} type='submit' className='button-design'>
+					<button disabled={isLoadingPlaylist} type='submit' className='button-design'>
 						{'SAVE TO SPOTIFY'.toLowerCase()}
 					</button>
 				</div>
