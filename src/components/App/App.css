@@ -164,9 +164,8 @@ button:focus {
 	text-transform: capitalize;
 	background-color: var(--background-color);
 	color: #221e1e;
-	padding: 0.2rem 0.7rem 0.2rem 0.7rem;
-	height: 2rem;
-	max-width: 120px;
+	padding: 18px 32px;
+	font-size: 11pt;
 	box-shadow: 0 0 50px 0 rgb(0 0 0 / 10%);
 	border: none;
 	white-space: nowrap;
@@ -240,12 +239,6 @@ h2 {
 .Footer {
 	background-color: black;
 	height: 50px;
-}
-
-@media (min-width: 1200px) and (max-width: 1558px) {
-	.button-design {
-		font-size: 0.8rem;
-	}
 }
 
 @media (min-width: 992px) and (max-width: 1200px) {
