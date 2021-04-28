@@ -16,7 +16,6 @@ export default class App extends Component {
 		this.state = {
 			mySearch: '',
 			searchResults: [],
-			playlistName: 'myPlayListName',
 			playlistTracks: [],
 			hasError: false,
 			isLoading: false,
@@ -25,7 +24,6 @@ export default class App extends Component {
 		}
 		this.addTrack = this.addTrack.bind(this)
 		this.removeTrack = this.removeTrack.bind(this)
-		this.updatePlaylistName = this.updatePlaylistName.bind(this)
 		this.savePlaylist = this.savePlaylist.bind(this)
 		this.search = this.search.bind(this)
 		this.tryAgainSearch = this.tryAgainSearch.bind(this)
@@ -65,16 +63,16 @@ export default class App extends Component {
 		return playlistURL[7]
 	}
 
-	savePlaylist() {
+	savePlaylist(playlistName) {
 		this.setState({ isLoadingPlaylist: true })
 		const trackUris = this.state.playlistTracks.map((track) => track.uri)
-		Spotify.savePlaylist(this.state.playlistName, trackUris)
+		Spotify.savePlaylist(playlistName, trackUris)
 			.then((response) => {
 				const playlistURL = this.getPlaylistURL(response)
 				const message = (
 					<>
 						<a target='blank' href={`https://open.spotify.com/playlist/${playlistURL}`} className='linkToast'>
-							{this.state.playlistName}
+							{playlistName}
 						</a>
 						<p>added to Spotify.</p>
 					</>
@@ -91,7 +89,7 @@ export default class App extends Component {
 					draggable: true,
 					progress: undefined,
 				})
-				this.setState({ playlistName: 'New PlayList', playlistTracks: [] })
+				this.setState({ playlistTracks: [] })
 				setTimeout(() => {
 					this.setState({ isLoadingPlaylist: false })
 				}, 500)
@@ -159,17 +157,13 @@ export default class App extends Component {
 		this.setState({ playlistTracks: keepTracks, searchResults: copySearchResult })
 	}
 
-	updatePlaylistName(newPlaylistName) {
-		this.setState({ playlistName: newPlaylistName })
-	}
-
 	tryAgainSearch() {
 		this.setState({ hasError: false, isLoading: true })
 		this.search(this.state.mySearch)
 	}
 
 	render() {
-		const { hasError, isLoading, searchResults, playlistTracks, playlistName, isLoadingPlaylist } = this.state
+		const { hasError, isLoading, searchResults, playlistTracks, isLoadingPlaylist } = this.state
 		return (
 			<div>
 				<div className='App'>
@@ -190,7 +184,6 @@ export default class App extends Component {
 										onAdd={this.addTrack}
 										onRemove={this.removeTrack}
 										onTryAgain={this.tryAgainSearch}
-										playlistName={playlistName}
 										onNameChange={this.updatePlaylistName}
 										onSave={this.savePlaylist}
 										isLoadingPlaylist={isLoadingPlaylist}

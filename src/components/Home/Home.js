@@ -4,17 +4,12 @@ import SearchResults from '../SearchResults/SearchResults'
 import Playlist from '../Playlist/Playlist'
 
 export default class Home extends Component {
-	constructor(props) {
-		super(props)
-		this.onNameChange = this.props.onNameChange.bind(this)
-	}
 	render() {
 		const {
 			hasError,
 			isLoading,
 			searchResults,
 			playlistTracks,
-			playlistName,
 			isLoadingPlaylist,
 			onSearch,
 			onTryAgain,
@@ -37,7 +32,6 @@ export default class Home extends Component {
 						onTryAgain={onTryAgain}
 					/>
 					<Playlist
-						playlistName={playlistName}
 						onRemove={onRemove}
 						playlistTracks={playlistTracks}
 						onNameChange={onNameChange}
