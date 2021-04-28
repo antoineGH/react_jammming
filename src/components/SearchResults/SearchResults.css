@@ -13,11 +13,10 @@
 }
 
 .SearchResults h2 {
-	font-size: 1.3rem;
+	font-family: 'ProximaNova_Bold';
+	font-size: 1.85rem;
 	border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
-	margin-bottom: 0.75rem;
-	padding-bottom: 1.7rem;
-	padding-left: 0.5rem;
+	padding: 0rem 0.5rem 1.8rem 0.5rem;
 	user-select: none;
 }
 
