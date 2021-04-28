@@ -10,8 +10,8 @@ export default class Header extends Component {
 				<div className='gridHeader'>
 					<img src={jammingLogo} alt='logo_jamming' />
 					<p className='jammingTitle'>Jamming</p>
-					<Link to='/'>Create Playlist</Link>
-					<Link to='/playlists'>My Playlists</Link>
+					<Link to='/'>Add Playlist</Link>
+					<Link to='/playlists'>View Playlists</Link>
 				</div>
 			</div>
 		)

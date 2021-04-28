@@ -31,7 +31,7 @@
 	font-size: 1.1rem;
 	text-transform: uppercase;
 	justify-self: space-between;
-	transition: 0.5s;
+	transition: 0.35s;
 }
 
 .Footer a:hover {
@@ -45,7 +45,7 @@
 	margin: auto 1.3rem;
 	cursor: pointer;
 	text-transform: uppercase;
-	transition: 0.5s;
+	transition: 0.35s;
 }
 
 .navigation-footer p:hover {
@@ -69,7 +69,7 @@
 	justify-items: center;
 	align-items: center;
 	margin: auto 0.75rem;
-	transition: 0.5s;
+	transition: 0.35s;
 	cursor: pointer;
 	font-size: 1.5rem;
 }

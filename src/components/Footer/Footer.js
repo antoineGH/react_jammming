@@ -7,8 +7,8 @@ export default class Footer extends Component {
 		return (
 			<div className='Footer'>
 				<div className='navigation-footer'>
-					<Link to='/'>Create Playlist</Link>
-					<Link to='/playlists'>My Playlists</Link>
+					<Link to='/'>Add Playlist</Link>
+					<Link to='/playlists'>View Playlists</Link>
 				</div>
 				<div className='social-footer'>
 					<i className='fab fa-linkedin-in fa-lg'></i>

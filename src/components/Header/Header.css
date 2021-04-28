@@ -23,10 +23,10 @@
 	text-decoration: none;
 	font-family: 'ProximaNova_Semibold';
 	font-weight: bold;
-	font-size: 1.3rem;
+	font-size: 1.1rem;
 	text-transform: uppercase;
 	justify-self: center;
-	transition: 0.5s;
+	transition: 0.35s;
 }
 
 .Header a:hover {
