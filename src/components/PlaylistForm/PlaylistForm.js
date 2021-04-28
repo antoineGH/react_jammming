@@ -7,14 +7,39 @@ export default function PlaylistForm(props) {
 	const { playlistTracks, isLoadingPlaylist } = props
 	const regexNoSpecial = /^[a-zA-Z0-9. ]*$/
 	const noDefault = /^((?!Playlist Name)[\s\S])*$/
+
 	const validationSchema = Yup.object({
-		playlistTracks: Yup.array().min(1, '* Add at least one track'),
+		playlistTracks: Yup.array().min(
+			1,
+			<>
+				<i className='fas fa-exclamation'></i>&nbsp;&nbsp;&nbsp;Add at least one track
+			</>
+		),
 		playlistName: Yup.string()
-			.min(4, '* Playlist name too short')
-			.max(25, '* Playlist name too long')
-			.matches(noDefault, '* Choose a playlist name')
-			.matches(regexNoSpecial, "* Playlist shouldn't contain special characters")
-			.required('* Playlist name required'),
+			.min(
+				4,
+				<>
+					<i className='fas fa-exclamation'></i>&nbsp;&nbsp;Playlist name too short
+				</>
+			)
+			.max(
+				25,
+				<>
+					<i className='fas fa-exclamation'></i>&nbsp;&nbsp;Playlist name too long
+				</>
+			)
+			.matches(noDefault, 'Please choose playlist name')
+			.matches(
+				regexNoSpecial,
+				<>
+					<i className='fas fa-exclamation'></i>&nbsp;&nbsp;Playlist shouldn't contain special characters
+				</>
+			)
+			.required(
+				<>
+					<i className='fas fa-exclamation'></i>&nbsp;&nbsp;Playlist name required
+				</>
+			),
 	})
 
 	const { handleSubmit, handleChange, handleBlur, values, touched, errors } = useFormik({

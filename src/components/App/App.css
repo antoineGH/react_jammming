@@ -158,9 +158,9 @@ button:focus {
 }
 
 .button-design {
-	font-family: 'ProximaNova_Regular', 'Arial Narrow', Arial, sans-serif;
-	font-size: 1rem;
-	border-radius: 0.36rem;
+	font-family: 'ProximaNova_SemiBold', 'Arial Narrow', Arial, sans-serif;
+	font-size: 1.1rem;
+	border-radius: 500px;
 	text-transform: capitalize;
 	background-color: var(--background-color);
 	color: #221e1e;
@@ -173,6 +173,7 @@ button:focus {
 	position: relative;
 	cursor: pointer;
 	user-select: none;
+	overflow: hidden;
 
 	--background-color: white;
 	--accent-color: #1db954;
@@ -181,14 +182,14 @@ button:focus {
 .button-design::before {
 	content: '';
 	position: absolute;
-	border-radius: 0.36rem;
+	border-radius: 500px;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
 	z-index: -1;
 	background-color: var(--accent-color);
-	transition: transform 300ms ease-in-out;
+	transition: transform 250ms linear;
 	transform: scaleX(0);
 	transform-origin: left;
 }
