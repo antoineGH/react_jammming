@@ -268,7 +268,12 @@ h2 {
 
 @media (max-width: 576px) {
 	.App-playlist {
-		width: 92%;
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-items: center;
+		justify-self: center;
+		margin: auto;
 		grid-template-rows: 2fr;
 	}
 }
