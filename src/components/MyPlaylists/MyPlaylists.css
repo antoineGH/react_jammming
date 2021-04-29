@@ -1,0 +1,25 @@
+.listPlaylists {
+	margin: auto;
+	width: 85%;
+	max-width: 1400px;
+	border-radius: 10px;
+	background-color: rgba(30, 31, 32, 0.493);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.562));
+	padding: 1.5rem;
+}
+
+.listPlaylists h2 {
+	font-family: 'ProximaNova_Bold';
+	font-size: 1.85rem;
+	border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
+	padding: 0rem 0.5rem 1.8rem 0.5rem;
+	-webkit-user-select: none;
+	user-select: none;
+	width: 100%;
+}
+
+.listPlaylists .listPlaylistsContent {
+	display: flex;
+	height: 705px;
+	overflow-y: scroll;
+}

@@ -36,12 +36,6 @@ export default class App extends Component {
 		// this.getPlaylist()
 	}
 
-	getPlaylist() {
-		Spotify.getPlaylist().then((responseJson) => {
-			console.log(responseJson)
-		})
-	}
-
 	search(mySearch) {
 		if (!mySearch) {
 			return
