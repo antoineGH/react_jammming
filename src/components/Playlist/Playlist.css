@@ -20,17 +20,20 @@
 	align-self: center;
 }
 .Playlist input {
-	width: 100%;
+	grid-area: 1 / 1 / span 1 / span 12;
+	margin: auto;
+	width: 85%;
 	border: 0;
 	outline: 0;
-	height: 36px;
+	height: 50px;
 	border-radius: 2rem;
 	background: rgba(255, 255, 255, 0.075);
 	color: white;
 	font-family: 'ProximaNova_Regular', 'Poppins', sans-serif;
 	font-size: 1.3rem;
 	align-self: center;
-	padding: 0.1rem 1.5rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
 }
 
 .loading {
@@ -41,7 +44,8 @@
 }
 
 .fa-edit {
-	padding-right: 0.5rem;
+	grid-area: 1 / 12 / span 1 / span 1;
+	align-self: center;
 }
 
 form {
@@ -51,12 +55,13 @@ form {
 .searchContainer {
 	display: flex;
 	flex-direction: column;
-	padding-bottom: 1rem;
+	padding-bottom: 0.5rem;
 	border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
 }
 
 .inputGroup {
-	display: flex;
+	display: grid;
+	grid-template: 1fr / repeat(12, 1fr);
 	width: 100%;
 	margin: auto;
 	padding: 1.5rem 0rem 0rem 0rem;
@@ -104,52 +109,32 @@ form {
 	background-color: #000000a1;
 }
 
-@media (min-width: 992px) and (max-width: 1200px) {
-	.Playlist {
-		width: auto;
-	}
-
-	.searchContainer {
-		display: grid;
-		grid-template-columns: 0.2fr 1.5fr 1fr;
-		overflow: hidden;
-		border-bottom: 1px solid hsla(0, 0%, 100%, 0.1);
-		padding: 1rem 0rem;
-		padding-left: 1.5rem;
-		width: 100%;
-		align-items: flex-start;
-		margin-bottom: 1.3rem;
-	}
-}
-
 @media (max-width: 992px) {
-	.searchContainer {
-		display: grid;
-		grid-template: repeat(2, 1fr) / repeat(12, 1fr);
-	}
 	.Playlist input {
-		grid-area: 1 / 2 / span 1 / span 12;
-	}
-
-	.button_container {
-		grid-area: 2 / 1 / span 1 / span 12;
-		justify-self: center;
-		align-self: flex-end;
-		padding: 0.5rem 0rem;
-		width: auto;
-		margin-top: 0.5rem;
+		width: 80%;
 	}
 }
 
-@media (min-width: 576px) and (max-width: 768px) {
+@media (max-width: 768px) {
 	.Playlist {
 		grid-area: 2 / 1 / span 1 / span 12;
 		width: 95%;
 		margin: 1.5rem 0rem;
 	}
+	.Playlist input {
+		width: 90%;
+	}
 }
 
 @media (max-width: 576px) {
+	.inputGroup {
+		width: 100%;
+		margin: auto;
+		justify-self: center;
+		justify-items: center;
+		justify-content: center;
+		display: flex;
+	}
 	.Playlist {
 		grid-area: 2 / 1 / span 1 / span 12;
 		width: 90%;
@@ -157,5 +142,12 @@ form {
 		height: 500px;
 		min-height: auto;
 		justify-self: start;
+	}
+	.fa-edit {
+		display: none;
+	}
+
+	.Playlist input {
+		text-align: center;
 	}
 }
