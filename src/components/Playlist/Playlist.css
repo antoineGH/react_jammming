@@ -4,6 +4,7 @@
 	flex-direction: column;
 	align-items: center;
 	overflow-y: scroll;
+	height: 705px;
 	width: 100%;
 	min-height: 705px;
 	padding: 1rem 1rem;
