@@ -9,37 +9,13 @@ export default function PlaylistForm(props) {
 	const noDefault = /^((?!Playlist Name)[\s\S])*$/
 
 	const validationSchema = Yup.object({
-		playlistTracks: Yup.array().min(
-			1,
-			<>
-				<i className='fas fa-exclamation'></i>&nbsp;&nbsp;&nbsp;Add at least one track
-			</>
-		),
+		playlistTracks: Yup.array().min(1, 'Add at least one track'),
 		playlistName: Yup.string()
-			.min(
-				4,
-				<>
-					<i className='fas fa-exclamation'></i>&nbsp;&nbsp;Playlist name too short
-				</>
-			)
-			.max(
-				25,
-				<>
-					<i className='fas fa-exclamation'></i>&nbsp;&nbsp;Playlist name too long
-				</>
-			)
+			.min(4, 'Playlist name too short')
+			.max(25, 'Playlist name too long')
 			.matches(noDefault, 'Please choose playlist name')
-			.matches(
-				regexNoSpecial,
-				<>
-					<i className='fas fa-exclamation'></i>&nbsp;&nbsp;Playlist shouldn't contain special characters
-				</>
-			)
-			.required(
-				<>
-					<i className='fas fa-exclamation'></i>&nbsp;&nbsp;Playlist name required
-				</>
-			),
+			.matches(regexNoSpecial, "Playlist name shouldn't contain special characters")
+			.required('Playlist name required'),
 	})
 
 	const { handleSubmit, handleChange, handleBlur, values, touched, errors } = useFormik({
@@ -62,12 +38,8 @@ export default function PlaylistForm(props) {
 		<Form role='form' onSubmit={handleSubmit}>
 			<FormGroup className='searchContainer'>
 				<InputGroup className='inputGroup'>
-					<InputGroup.Prepend>
-						<InputGroup.Text>
-							<i className='far fa-edit'></i>
-						</InputGroup.Text>
-					</InputGroup.Prepend>
 					<Form.Control id='playlistName' name='playlistName' type='text' onBlur={handleBlur} onChange={handleChange} value={values.playlistName} />
+					<i className='far fa-edit'></i>
 				</InputGroup>
 				<div className='button_container'>
 					<button disabled={isLoadingPlaylist} type='submit' className='button-design'>

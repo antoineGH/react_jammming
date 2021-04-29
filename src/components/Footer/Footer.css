@@ -94,6 +94,17 @@
 	padding: 0rem 1rem;
 }
 
+@media (max-width: 992px) {
+	.navigation-footer {
+		width: 50%;
+	}
+}
+
+@media (max-width: 768px) {
+	.navigation-footer {
+		width: 100%;
+	}
+}
 @media (max-width: 576px) {
 	.Footer {
 		display: none;
