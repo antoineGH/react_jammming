@@ -4,7 +4,7 @@ import * as Yup from 'yup'
 import { Form, FormGroup, InputGroup } from 'react-bootstrap'
 
 export default function PlaylistForm(props) {
-	const { playlistTracks, isLoadingPlaylist } = props
+	const { playlistTracks, isLoadingPlaylist, namePlaylist } = props
 	const regexNoSpecial = /^[a-zA-Z0-9. ]*$/
 	const noDefault = /^((?!Playlist Name)[\s\S])*$/
 
@@ -20,12 +20,13 @@ export default function PlaylistForm(props) {
 
 	const { handleSubmit, handleChange, handleBlur, values, touched, errors } = useFormik({
 		initialValues: {
-			playlistName: 'Playlist Name',
+			playlistName: namePlaylist,
 			playlistTracks: playlistTracks,
 		},
+
 		validationSchema,
+
 		onSubmit(values) {
-			console.log(values)
 			savePlaylist()
 		},
 	})
@@ -34,11 +35,23 @@ export default function PlaylistForm(props) {
 		props.onSave(values.playlistName)
 	}
 
+	const inputChanges = (e) => {
+		handleChange(e)
+		localStorage.setItem('playlistName', e.target.value)
+	}
+
 	return (
 		<Form role='form' onSubmit={handleSubmit}>
 			<FormGroup className='searchContainer'>
 				<InputGroup className='inputGroup'>
-					<Form.Control id='playlistName' name='playlistName' type='text' onBlur={handleBlur} onChange={handleChange} value={values.playlistName} />
+					<Form.Control
+						id='playlistName'
+						name='playlistName'
+						type='text'
+						onBlur={handleBlur}
+						onChange={(e) => inputChanges(e)}
+						value={values.playlistName}
+					/>
 					<i className='far fa-edit'></i>
 				</InputGroup>
 				<div className='button_container'>
