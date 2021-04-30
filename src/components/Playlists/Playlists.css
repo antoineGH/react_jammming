@@ -2,23 +2,33 @@
 	display: grid;
 	grid-template: 1fr / repeat(12, 1fr);
 	align-self: center;
-	width: 60%;
 	margin: auto;
 	margin-top: 0.2rem;
 	margin-bottom: 0.2rem;
 }
 
-.playlistName {
+a:-webkit-any-link {
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.playlistAnchor {
+	grid-area: 1 / 2 / span 1 / span 5;
+}
+
+.playlistAnchor .playlistName {
+	color: white;
 	font-size: 1rem;
 	letter-spacing: 0.01rem;
 	font-weight: 500;
 	font-family: 'ProximaNova_Bold', 'Poppins', sans-serif;
 	align-self: center;
 	justify-self: center;
-	grid-area: 1 / 3 / span 1 / span 3;
+	grid-area: 1 / 2 / span 1 / span 5;
+	text-decoration: none;
 }
 
-.Playlists a {
+.Playlists a.button {
 	align-self: center;
 	grid-area: 1 / 10 / span 1 / span 5;
 }
@@ -35,4 +45,82 @@
 
 .Playlists Image {
 	grid-area: 1 / 1 / span 1 / span 1;
+}
+
+.fa-spotify {
+	color: #1db954;
+	font-size: 1.2rem;
+	margin-right: 0.5rem;
+}
+
+@media (max-width: 992px) {
+	.Playlists button {
+		padding: 8px 1px;
+	}
+}
+
+@media (max-width: 768px) {
+	.Playlists {
+		display: grid;
+		grid-template: repeat(2, 0.7fr) / repeat(12, 1fr);
+		align-self: center;
+		margin: auto;
+		margin-top: 0.2rem;
+		margin-bottom: 0.2rem;
+	}
+
+	.playlistAnchor {
+		align-self: center;
+		justify-self: center;
+		padding-left: 1rem;
+		grid-area: 1 / 2 / span 1 / span 6;
+	}
+
+	.Playlists button {
+		padding: 8px 1px;
+	}
+
+	.totalTrack {
+		align-self: flex-start;
+		justify-self: center;
+		padding-left: 1rem;
+		grid-area: 2 / 2 / span 1 / span 6;
+		margin: 0rem;
+	}
+
+	.Playlists a.button {
+		align-self: center;
+		justify-self: center;
+		grid-area: 1 / 9 / span 2 / span 6;
+		width: 100%;
+	}
+}
+
+@media (max-width: 576px) {
+	.playlistName {
+		align-self: center;
+		justify-self: flex-start;
+		padding-left: 0rem;
+		grid-area: 1 / 4 / span 2 / span 10;
+	}
+
+	.Playlists button {
+		padding: 8px 1px;
+		display: none;
+	}
+
+	.totalTrack {
+		align-self: flex-start;
+		justify-self: center;
+		padding-left: 1rem;
+		grid-area: 2 / 2 / span 1 / span 6;
+		margin: 0rem;
+		display: none;
+	}
+
+	.Playlists a {
+		align-self: center;
+		justify-self: flex-start;
+		grid-area: 1 / 3 / span 2 / span 10;
+	}
 }

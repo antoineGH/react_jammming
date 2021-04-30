@@ -14,11 +14,15 @@ export default function Playlists(props) {
 	console.log(playlist)
 	return (
 		<div className='Playlists'>
-			<Image image={playlist.image.url} name={playlist.name} />
-			<h3 className='playlistName'>{formatName(playlist.name)}</h3>
+			{playlist.image && <Image image={playlist.image.url} name={playlist.name} />}
+			<a className='playlistAnchor' rel='noreferrer noopener' target='_blank' href={playlist.playlistUrl}>
+				<h3 className='playlistName'>{formatName(playlist.name)}</h3>
+			</a>
 			<p className='totalTrack'>{playlist.total} Tracks</p>
-			<a rel='noreferrer noopener' target='_blank' href={playlist.playlistUrl}>
-				<button className='button-design'>View on Spotify</button>
+			<a className='button' rel='noreferrer noopener' target='_blank' href={playlist.playlistUrl}>
+				<button className='button-design'>
+					<i class='fab fa-spotify'></i> View on Spotify{' '}
+				</button>
 			</a>
 		</div>
 	)

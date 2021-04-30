@@ -183,6 +183,11 @@
 		padding: 0rem;
 	}
 
+	.Playlists .imgPreview {
+		grid-area: 1 / 1 / span 12 / span 3;
+		justify-self: flex-start;
+	}
+
 	.imgPreview {
 		grid-area: 1 / 1 / span 12 / span 2;
 		justify-self: center;
