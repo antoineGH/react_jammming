@@ -1,14 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import Spotify from '../../util/Spotify'
 import BarLoader from 'react-spinners/BarLoader'
+import MyPlaylistsList from '../MyPlaylistsList/MyPlaylistsList'
 import './MyPlaylists.css'
 
 export default function MyPlaylists() {
 	const [playlists, setPlaylists] = useState([])
-	const [hasError, setHasError] = useState(false)
+	const [hasError, setHasError] = useState(true)
 	const [isLoading, setIsLoading] = useState(false)
 
 	const getPlaylist = () => {
+		setHasError(false)
 		setIsLoading(true)
 		Spotify.getPlaylist()
 			.then((responseJson) => {
@@ -20,6 +22,10 @@ export default function MyPlaylists() {
 				setHasError(true)
 				setIsLoading(false)
 			})
+	}
+
+	const onTryAgain = () => {
+		getPlaylist()
 	}
 
 	useEffect(() => {
@@ -34,28 +40,28 @@ export default function MyPlaylists() {
 			<div className='listPlaylists'>
 				<h2>My Playlists</h2>
 				<div className='listPlaylistsContent'>
-					{hasError && <p>hasError</p>}
-					{isLoading && <BarLoader color={'rgb(255 255 255 / 40%)'} height={6} width={120} size={20} />}
-					{!isLoading && <></>}
+					{hasError && (
+						<div className='hasError'>
+							<p className='errorAPI'>Jamming Service was not able to contact Spotify API</p>
+							<div className='button_container'>
+								<button className='button-design' onClick={onTryAgain}>
+									{'TRY AGAIN'.toLowerCase()}
+								</button>
+							</div>
+						</div>
+					)}
+					{isLoading && (
+						<div className='myPlaylistsLoading'>
+							<BarLoader color={'rgb(255 255 255 / 40%)'} height={6} width={120} size={20} />
+						</div>
+					)}
+					{!isLoading && (
+						<>
+							<MyPlaylistsList playlists={playlists} />
+						</>
+					)}
 				</div>
 			</div>
 		</>
 	)
-
-	// 	if (hasError) {
-	// 		return (
-	// 			<>
-	// 				<p>hasError</p>
-	// 			</>
-	// 		)
-	// 	}
-	// 	if (isLoading) {
-	// 		return (
-	// 			<>
-	// 				<BarLoader color={'rgb(255 255 255 / 40%)'} height={6} width={120} size={20} />
-	// 			</>
-	// 		)
-	// 	} else {
-	// 		return <>MyPlaylists</>
-	// 	}
 }

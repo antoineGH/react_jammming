@@ -49,6 +49,7 @@ const Spotify = {
 			image: playlist.images[0],
 			playlistUrl: playlist.external_urls.spotify,
 			tracksUrl: playlist.tracks.href,
+			total: playlist.tracks.total,
 			public: playlist.public,
 		}))
 	},

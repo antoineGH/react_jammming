@@ -1,7 +1,7 @@
 .listPlaylists {
 	margin: auto;
 	width: 85%;
-	max-width: 1400px;
+	max-width: 1200px;
 	border-radius: 10px;
 	background-color: rgba(30, 31, 32, 0.493);
 	background-image: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.562));
@@ -20,6 +20,19 @@
 
 .listPlaylists .listPlaylistsContent {
 	display: flex;
+	flex-direction: column;
 	height: 705px;
 	overflow-y: scroll;
+}
+
+.myPlaylistsLoading {
+	width: 100%;
+	display: flex;
+	padding-top: 2rem;
+	justify-content: center;
+}
+
+.hasError {
+	display: flex;
+	width: 100%;
 }
