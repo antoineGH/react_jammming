@@ -1,7 +1,7 @@
 .listPlaylists {
 	margin: auto;
 	width: 85%;
-	max-width: 1200px;
+	max-width: 800px;
 	border-radius: 10px;
 	background-color: rgba(30, 31, 32, 0.493);
 	background-image: linear-gradient(rgba(0, 0, 0, 0.562), rgba(0, 0, 0, 0.562));
