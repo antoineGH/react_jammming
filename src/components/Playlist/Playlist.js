@@ -5,7 +5,7 @@ import './Playlist.css'
 import BarLoader from 'react-spinners/BarLoader'
 
 export default function Playlist(props) {
-	const [namePlaylist, setNamePlaylist] = useState('Initial Name Playlist')
+	const [namePlaylist, setNamePlaylist] = useState('New Playlist Name')
 	const [isLoading, setIsLoading] = useState(true)
 	const { playlistTracks, isLoadingPlaylist, onRemove, onSave } = props
 
