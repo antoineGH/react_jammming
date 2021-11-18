@@ -80,6 +80,6 @@ yarn start
 
 ## 5. Screenshots<a name="screenshots"></a>
 
-Browse tracks ![Components Screenshot](https://templars.guru/app/github/react_jamming/jamming_create_playlist.PNG)
+Browse tracks ![Components Screenshot](https://github.com/antoineratat/github_docs/blob/main/react_jamming/jamming_create_playlist.PNG?raw=true)
 
-View existing playlists ![Components Screenshot](https://templars.guru/app/github/react_jamming/jamming_view_playlist.PNG)
+View existing playlists ![Components Screenshot](https://github.com/antoineratat/github_docs/blob/main/react_jamming/jamming_view_playlist.PNG?raw=true)
